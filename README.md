@@ -94,6 +94,8 @@ classDiagram
     WeekDay --> Class : "uses"
 ```
 
+note: skomentuj tutaj że system umożliwia dodawanie / usuwanie class czasu itd... opisz przedeswystkim diagram nad tym textem 
+
 
 ```mermaid
 sequenceDiagram
@@ -107,3 +109,12 @@ sequenceDiagram
     Sched-->>Admin: scheduleCreated()
 ```
 
+tutaj pokaż przykład zastosowań jeśli chcesz dodać jakieś jeszcze by lepiej pokazać użycie tego "systemu" napisz klazule 
+```
+'''mermaid
+<opis co ma być wykonane>
+'''
+```
+
+Made by:
+Łukasz Stajkowski
