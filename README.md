@@ -1,11 +1,23 @@
 # PlanZajecUML
-Uni project for pcz 
+
+Uni project for pcz
 
 ```mermaid
 ---
 title: Class system diagram
 ---
 classDiagram
+    class WeekDay {
+        <<enumeration>>
+        MONDAY
+        TUESDAY
+        WEDNESDAY
+        THURSDAY
+        FRIDAY
+        SATURDAY
+        SUNDAY
+    }
+
     class Student {
         +int id
         +String name
@@ -17,35 +29,61 @@ classDiagram
     class Teacher {
         +int id
         +String name
+        +String surname
+        +String email
+        +String phoneNumber
+        +String subjectSpecialization
+        +List~Class~ assignedClasses
         +viewSchedule()
-        +assignClasses()
+        +assignClasses(Class newClass)
+        +markAttendance(Class class, Student student)
+
     }
 
     class Administrator {
         +int id
         +String name
+        +String surname
+        +String email
+        +String phoneNumber
         +createSchedule()
         +modifySchedule()
+        +assignTeacherToClass(Teacher teacher, Class class)
+        +assignRoomToClass(Class class, Room room)
+        +viewAllSchedules()
     }
 
     class Schedule {
         +int scheduleId
-        +addClass()
-        +removeClass()
-        +modifyClass()
+        +List~Class~ classes
+        +addClass(Class newClass)
+        +removeClass(Class class)
+        +modifyClass(Class class, Room newRoom)
+        +viewSchedule()
     }
 
     class Class {
+        +WeekDay Day
         +int classId
         +String subject
+        +List~Student~ enrolledStudents
         +Teacher teacher
+        +Double StartTime
+        +Double Duration
         +Room room
+        +addStudent(Student student)
+        +removeStudent(Student student)
+        +viewClassDetails()
+        +updateClassTime(Double StartTime, Double Duration)
+        +updateClassDay(WeekDay Day)
+        +assignRoom(Room newRoom)
     }
 
     class Room {
         +int roomId
         +String location
         +int capacity
+                +viewRoomSchedule()
     }
 
     Student --> Schedule : "views"
@@ -53,6 +91,7 @@ classDiagram
     Administrator --> Schedule : "creates and modifies"
     Schedule --> Class : "contains"
     Class --> Room : "assigned to"
+    WeekDay --> Class : "uses"
 ```
 
 
