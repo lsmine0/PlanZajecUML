@@ -94,7 +94,7 @@ classDiagram
     WeekDay --> Class : "uses"
 ```
 
-note: skomentuj tutaj że system umożliwia dodawanie / usuwanie class czasu itd... opisz przedeswystkim diagram nad tym textem 
+note: W systemie znajdują się następujące typu kont: Teacher , Student , Administrator o różnych poziomach uprawnień. Student odpowiadający uczniom o najbardziej ograniczonym dostępie może tylko i wyłącznie obejrzec już utworzony i zaakceptowany plan zajęć. Teacher odpowiadający wykładowcom poza oczywistym obejrzeniem planu zajęć ma możliwość dodania pod siebie nowej klasy oraz zaznaczania obecności uczniów. 
 
 
 ```mermaid
