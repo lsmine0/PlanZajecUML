@@ -112,7 +112,7 @@ classDiagram
     WeekDay --> Class : "uses"
 ```
 
-<>...>
+To jest przykład użycia naszego systemu by utworzyć nowy plan dla nowej grupy.
 
 ```mermaid
 sequenceDiagram
